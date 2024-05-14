@@ -31,3 +31,24 @@ int findFirstNeg(vector<vector<float> > matrix) {
     return -1;
 }
 
+void divideRowByConstant(float** array, int rowNum, int width, float constant) {
+    for (int i=0; i<width; i++) {
+        array[rowNum][i] = array[rowNum][i] * (1.0/constant);
+    }
+}
+
+void swapRows(vector<vector<float> >* mat, int row1, int row2, int width) {
+
+    vector<float> temp = (*mat)[row1];
+    (*mat)[row1] = (*mat)[row2];
+    (*mat)[row2] = temp;
+}
+
+void printMat(vector<vector<float> > workMat) {
+    for (int i = 0; i < workMat.size(); i++) {
+        for (int j = 0; j < workMat[i].size(); j++) {
+            cout << " " << workMat[i][j];
+        }
+        cout << endl;
+    }
+}
